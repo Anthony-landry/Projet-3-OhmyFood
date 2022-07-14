@@ -1,0 +1,11 @@
+@use "../abstracts";
+
+//
+
+.map-location {
+    font-family: abstracts.$font-1;
+    @include abstracts.display-flex();
+    gap: 1rem;
+    background-color: abstracts.$background-color;
+    padding: 1rem;
+}

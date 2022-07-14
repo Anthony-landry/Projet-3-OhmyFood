@@ -4,11 +4,12 @@
 // @use "abstracts/functions";
 // @use "abstracts/placeholders";
 
-@use "bases/reset";
-@use "bases/base";
-@use "bases/animations";
+@use "./bases/reset";
+@use "./bases/base";
+@use "./bases/animations";
 
 //use modules
-@use "layout/header";
+@use "./layout/header";
+@use "./pages/homepage";
 
 

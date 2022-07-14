@@ -3,11 +3,6 @@
 
 @use "../abstracts";
 
-* a {
-    text-decoration: none;
-    color: inherit; //à definir selon le projet
-}
-
 header {
     text-align: center;
     font-family: abstracts.$font-2;

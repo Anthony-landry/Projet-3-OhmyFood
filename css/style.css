@@ -50,22 +50,101 @@ input {
   color: inherit;
 }
 
+/* font familly */
+.map-location, .reservation, .reservation__title, .choice {
+  font-family: "Roboto", sans-serif, verdana;
+}
+
 header {
-  text-align: center;
   font-family: "Shrikhand", cursive;
-  padding: 2rem;
-  position: relative;
+}
+
+/* contouring box */
+.reservation__btn {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
 }
 
+header {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+/*  section map marker */
 .map-location {
-  font-family: "Roboto", sans-serif, verdana;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   background-color: #f3f3f3;
   padding: 1rem;
+}
+
+/* section reservation & button */
+.reservation {
+  padding: 2rem 2rem 5rem;
+  text-align: center;
+  background-color: #f6f6f6;
+}
+.reservation__sub {
+  padding: 1em;
+  margin-bottom: 1em;
+}
+.reservation__btn {
+  background-image: linear-gradient(360deg, #9356DC 35%, #FF79DA 100%);
+  border-radius: 2rem;
+  color: white;
+  padding: 1em;
+  box-shadow: 0.15rem 0.15rem 8px rgba(0, 0, 0, 0.25);
+}
+.reservation__btn:hover {
+  opacity: 0.6;
+  zoom: 1.02;
+}
+
+/* choice */
+.choice {
+  margin: 1rem;
+}
+.choice__listBtn {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  list-style: decimal;
+  margin: 2rem;
+  justify-content: space-around;
+}
+@media (max-width: 800px) {
+  .choice__listBtn {
+    flex-direction: column;
+  }
+}
+.choice__listBtn li {
+  margin: 2rem;
+}
+.choice--btn1 {
+  padding: 1em;
+  background-color: #f6f6f6;
+  border-radius: 1rem;
+}
+.choice--btn1:hover {
+  background-color: #f5edff;
+}
+.choice--btn2 {
+  padding: 1em;
+  background-color: #f6f6f6;
+  border-radius: 1rem;
+}
+.choice--btn2:hover {
+  background-color: #f5edff;
+}
+.choice--btn3 {
+  padding: 1em;
+  background-color: #f6f6f6;
+  border-radius: 1rem;
+}
+.choice--btn3:hover {
+  background-color: #f5edff;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,47 @@
-@mixin display-flex {
+@use "./variables";
+@use "./placeholders";
+
+
+@mixin flexMid {
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-@mixin box-shadow {
-    box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
+// @mixin boxShadow() {
+
+//     box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
+// }
+
+@mixin button {
+    
+    background-image: linear-gradient(360deg, (variables.$color-primary) 35%, (variables.$color-secondary) 100%);
+    border-radius: 2rem;
+    color: variables.$color_text;
+    padding: 1em;
+    box-shadow: 0.15rem 0.15rem 8px rgba(0, 0, 0, 0.25);
+    @extend %boxShadow;
+   
+
+
+    &:hover {
+
+        opacity: 0.60;
+        zoom: 1.02;
+    }
+} 
+
+@mixin buttonDecoration {
+    
+    padding: 1em;
+    background-color: variables.$background-clear;
+    border-radius: 1rem;
+    //list-style-type;
+
+    &:hover {
+
+        background-color: variables.$background-btn-hover;
+    }
+    
 }

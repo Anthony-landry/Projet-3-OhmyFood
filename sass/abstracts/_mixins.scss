@@ -2,17 +2,13 @@
 @use "./placeholders";
 
 
-@mixin flexMid {
+@mixin flexMid() {
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-// @mixin boxShadow() {
-
-//     box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
-// }
 
 @mixin button {
     
@@ -20,10 +16,7 @@
     border-radius: 2rem;
     color: variables.$color_text;
     padding: 1em;
-    box-shadow: 0.15rem 0.15rem 8px rgba(0, 0, 0, 0.25);
     @extend %boxShadow;
-   
-
 
     &:hover {
 
@@ -32,16 +25,66 @@
     }
 } 
 
+// choice
+
 @mixin buttonDecoration {
-    
-    padding: 1em;
+    position: relative;
+    padding: 1.5rem 2rem;
     background-color: variables.$background-clear;
     border-radius: 1rem;
-    //list-style-type;
+    @extend %boxShadow;
+
+    & .fas {
+            
+        padding-right: 1rem;
+        color: variables.$color-icon;
+
+    }
+    
+    &::before{
+        
+        position: absolute;
+        counter-increment: compteListe 1;
+        content: counter(compteListe) " ";
+        background-color: variables.$color-primary;
+        color: variables.$color_text;
+        border-radius: 50em;
+        height: 2em;
+        width: 2em;
+        @include flexMid;
+        transform: translate(-50px, -7px);
+    }
 
     &:hover {
 
         background-color: variables.$background-btn-hover;
+
+        & .fas {
+
+            color: variables.$color-primary;
+        }
     }
     
+}
+
+// Restaurant 
+
+.restaurant {
+    margin: 2rem;
+    display: grid;
+    grid-gap: 2rem;
+
+    &--select {
+        background-color: red;
+        border-radius: 0 0 1em 1em; 
+    }
+
+    & img {
+
+        object-fit: cover;
+        height: calc(100% - 5rem);
+        width: 100%;
+        border-radius: 1em 1em 0 0;
+
+    }
 }

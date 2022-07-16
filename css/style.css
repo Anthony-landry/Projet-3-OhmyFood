@@ -51,17 +51,33 @@ input {
 }
 
 /* font familly */
-.map-location, .reservation, .reservation__title, .choice {
+.contact, .map-location, .reservation, .reservation__title, .choice, .restaurant {
   font-family: "Roboto", sans-serif, verdana;
 }
 
-header {
+.contact__title, header {
   font-family: "Shrikhand", cursive;
 }
 
 /* contouring box */
-.reservation__btn {
+.reservation__btn, .choice__listBtn li {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.restaurant {
+  margin: 2rem;
+  display: grid;
+  grid-gap: 2rem;
+}
+.restaurant--select {
+  background-color: red;
+  border-radius: 0 0 1em 1em;
+}
+.restaurant img {
+  object-fit: cover;
+  height: calc(100% - 5rem);
+  width: 100%;
+  border-radius: 1em 1em 0 0;
 }
 
 header {
@@ -95,7 +111,6 @@ header {
   border-radius: 2rem;
   color: white;
   padding: 1em;
-  box-shadow: 0.15rem 0.15rem 8px rgba(0, 0, 0, 0.25);
 }
 .reservation__btn:hover {
   opacity: 0.6;
@@ -108,43 +123,77 @@ header {
 }
 .choice__listBtn {
   display: flex;
-  flex-flow: row wrap;
   font-weight: bold;
-  list-style: decimal;
   margin: 2rem;
   justify-content: space-around;
+  counter-reset: compteListe;
 }
 @media (max-width: 800px) {
   .choice__listBtn {
     flex-direction: column;
+    margin: 0;
+    text-align: center;
   }
 }
 .choice__listBtn li {
+  margin: 1rem;
+  position: relative;
+  padding: 1.5rem 2rem;
+  background-color: #f6f6f6;
+  border-radius: 1rem;
+}
+.choice__listBtn li .fas {
+  padding-right: 1rem;
+  color: #7e7e7e;
+}
+.choice__listBtn li::before {
+  position: absolute;
+  counter-increment: compteListe 1;
+  content: counter(compteListe) " ";
+  background-color: #9356DC;
+  color: white;
+  border-radius: 50em;
+  height: 2em;
+  width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50px, -7px);
+}
+.choice__listBtn li:hover {
+  background-color: #f5edff;
+}
+.choice__listBtn li:hover .fas {
+  color: #9356DC;
+}
+
+/* Restaurant */
+.restaurant {
+  background-color: #f6f6f6;
   margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
 }
-.choice--btn1 {
-  padding: 1em;
-  background-color: #f6f6f6;
-  border-radius: 1rem;
+.restaurant__title {
+  grid-column: 2 span;
 }
-.choice--btn1:hover {
-  background-color: #f5edff;
+
+/* footer */
+.contact {
+  background-color: #353535;
+  color: white;
+  padding: 1rem;
 }
-.choice--btn2 {
-  padding: 1em;
-  background-color: #f6f6f6;
-  border-radius: 1rem;
+.contact__title {
+  padding: 1em 0.5em;
+  font-size: 130%;
 }
-.choice--btn2:hover {
-  background-color: #f5edff;
+.contact__link {
+  padding: 0.5rem;
 }
-.choice--btn3 {
-  padding: 1em;
-  background-color: #f6f6f6;
-  border-radius: 1rem;
-}
-.choice--btn3:hover {
-  background-color: #f5edff;
+.contact__link .fas {
+  padding-right: 0.5em;
 }
 
 /*# sourceMappingURL=style.css.map */

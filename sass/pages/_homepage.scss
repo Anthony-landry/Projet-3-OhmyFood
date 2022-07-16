@@ -15,7 +15,6 @@
 
 .reservation {
 
-
 @extend %title-1;
 padding: 2rem 2rem 5rem;    
 text-align: center; 
@@ -46,41 +45,41 @@ background-color: abstracts.$background-clear;
     &__listBtn {
         
     display: flex;
-    flex-flow: row wrap;
     font-weight: bold;
-    list-style:decimal;
     margin: 2rem;
     justify-content: space-around;
+    counter-reset: compteListe; //css add increment value
     
     @media (max-width: 800px) {
         flex-direction: column;
+        margin: 0;
+        text-align: center;
         
     }
 
-    & li {
-        
-        margin: 2rem;
-        
-        
+    & li{
+
+        margin: 1rem;
+        @include abstracts.buttonDecoration;
+
     }
 
     }
     
-    &--btn1 {
+}
 
-       @include abstracts.buttonDecoration;
+/* Restaurant */
+
+.restaurant {
+
+    @extend %title-1;
+    background-color: abstracts.$background-clear;
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+
+    &__title{
+        grid-column: 2 span;
     }
-
-    &--btn2 {
-
-        @include abstracts.buttonDecoration;
-     }
-
-     &--btn3 {
-
-        @include abstracts.buttonDecoration;
-     }
-  
-  
- 
 }

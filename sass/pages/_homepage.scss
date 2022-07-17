@@ -51,6 +51,7 @@ background-color: abstracts.$background-clear;
     counter-reset: compteListe; //css add increment value
     
     @media (max-width: 800px) {
+
         flex-direction: column;
         margin: 0;
         text-align: center;
@@ -71,15 +72,33 @@ background-color: abstracts.$background-clear;
 /* Restaurant */
 
 .restaurant {
-
+    
     @extend %title-1;
     background-color: abstracts.$background-clear;
-    margin: 2rem;
+    margin: 2rem 0;
+    padding : 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
 
+    &--select{
+
+        position : relative;
+
+        @media (max-width: 800px) {
+        grid-column: 1/-1;
+    }
+}
+
+&--buttonCardNew{
+    @include abstracts.buttonCardNew;
+    position: absolute;
+
+}
+
     &__title{
         grid-column: 2 span;
     }
+
+    
 }

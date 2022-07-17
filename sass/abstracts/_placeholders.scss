@@ -1,3 +1,5 @@
+@use "./variables";
+
 /* font familly */
 
 %title-1{
@@ -12,4 +14,10 @@
 %boxShadow {
 
     box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
+}
+
+%linearGradiant {
+
+background-image: linear-gradient(360deg, (variables.$color-primary) 35%, (variables.$color-secondary) 100%);
+
 }

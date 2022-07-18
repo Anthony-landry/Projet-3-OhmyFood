@@ -10,7 +10,11 @@
 
 //use modules
 @use "./layout/header";
-@use "./pages/homepage";
 @use "./layout/footer";
+
+@use "./pages/homepage";
+
+@use "./components/buttons";
+@use "./components/card";
 
 

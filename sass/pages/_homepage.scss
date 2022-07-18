@@ -29,10 +29,6 @@ background-color: abstracts.$background-clear;
         margin-bottom: 1em;
     }
 
-    &__btn {
-        @include abstracts.button;
-        
-    }
 }
 
 /* choice */
@@ -45,7 +41,6 @@ background-color: abstracts.$background-clear;
     &__listBtn {
         
     display: flex;
-    font-weight: bold;
     margin: 2rem;
     justify-content: space-around;
     counter-reset: compteListe; //css add increment value
@@ -61,7 +56,7 @@ background-color: abstracts.$background-clear;
     & li{
 
         margin: 1rem;
-        @include abstracts.buttonDecoration;
+        
 
     }
 
@@ -91,7 +86,7 @@ background-color: abstracts.$background-clear;
 }
 
 &--buttonCardNew{
-    @include abstracts.buttonCardNew;
+    
     position: absolute;
 
 }

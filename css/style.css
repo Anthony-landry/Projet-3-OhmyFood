@@ -51,7 +51,7 @@ input {
 }
 
 /* font familly */
-.contact, .map-location, .reservation, .reservation__title, .choice, .restaurant {
+.map-location, .reservation, .reservation__title, .choice, .restaurant, .contact {
   font-family: "Roboto", sans-serif, verdana;
 }
 
@@ -76,6 +76,7 @@ input {
   object-fit: cover;
   height: calc(100% - 5rem);
   width: 100%;
+  aspect-ratio: 1/0.5;
   border-radius: 1em 1em 0 0;
 }
 .restaurant .far {
@@ -85,6 +86,23 @@ header {
   text-align: center;
   padding: 2rem;
   position: relative;
+}
+
+/* footer */
+.contact {
+  background-color: #353535;
+  color: white;
+  padding: 1rem;
+}
+.contact__title {
+  padding: 1em 0.5em;
+  font-size: 130%;
+}
+.contact__link {
+  padding: 0.5rem;
+}
+.contact__link .fas {
+  padding-right: 0.5em;
 }
 
 /*  section map marker */
@@ -107,15 +125,6 @@ header {
   padding: 1em;
   margin-bottom: 1em;
 }
-.reservation__btn {
-  border-radius: 2rem;
-  color: white;
-  padding: 1em;
-}
-.reservation__btn:hover {
-  opacity: 0.6;
-  zoom: 1.02;
-}
 
 /* choice */
 .choice {
@@ -123,7 +132,6 @@ header {
 }
 .choice__listBtn {
   display: flex;
-  font-weight: bold;
   margin: 2rem;
   justify-content: space-around;
   counter-reset: compteListe;
@@ -137,10 +145,48 @@ header {
 }
 .choice__listBtn li {
   margin: 1rem;
+}
+
+/* Restaurant */
+.restaurant {
+  background-color: #f6f6f6;
+  margin: 2rem 0;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+.restaurant--select {
+  position: relative;
+}
+@media (max-width: 800px) {
+  .restaurant--select {
+    grid-column: 1/-1;
+  }
+}
+.restaurant--buttonCardNew {
+  position: absolute;
+}
+.restaurant__title {
+  grid-column: 2 span;
+}
+
+.reservation__btn {
+  border-radius: 2rem;
+  color: white;
+  padding: 1em;
+}
+.reservation__btn:hover {
+  opacity: 0.6;
+  zoom: 1.02;
+}
+
+.choice__listBtn li {
   position: relative;
   padding: 1.5rem 2rem;
   background-color: #f6f6f6;
   border-radius: 1rem;
+  font-weight: bold;
 }
 .choice__listBtn li .fas {
   padding-right: 1rem;
@@ -167,52 +213,29 @@ header {
   color: #9356DC;
 }
 
-/* Restaurant */
-.restaurant {
-  background-color: #f6f6f6;
-  margin: 2rem 0;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-}
-.restaurant--select {
-  position: relative;
-}
-@media (max-width: 800px) {
-  .restaurant--select {
-    grid-column: 1/-1;
-  }
-}
 .restaurant--buttonCardNew {
   background-color: #99e2d0;
   color: #008766;
   border-radius: 0.1em;
-  padding: 0.8em 1em;
+  padding: 0.6em 0.8em;
   font-weight: bold;
-  top: 10px;
+  top: 20px;
   right: 10px;
-  position: absolute;
-}
-.restaurant__title {
-  grid-column: 2 span;
 }
 
-/* footer */
-.contact {
-  background-color: #353535;
-  color: white;
-  padding: 1rem;
+.restaurant--select {
+  background-color: white;
+  border-radius: 1em;
 }
-.contact__title {
-  padding: 1em 0.5em;
-  font-size: 130%;
+.restaurant img {
+  object-fit: cover;
+  height: calc(100% - 5rem);
+  width: 100%;
+  aspect-ratio: 1/0.5;
+  border-radius: 1em 1em 0 0;
 }
-.contact__link {
-  padding: 0.5rem;
-}
-.contact__link .fas {
-  padding-right: 0.5em;
+.restaurant .far {
+  position: relative;
 }
 
 /*# sourceMappingURL=style.css.map */

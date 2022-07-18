@@ -1,21 +1,11 @@
-@use "./variables";
-@use "./placeholders";
-
-
-@mixin flexMid() {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+@use "../abstracts";
 
 // Restaurant 
 
 .restaurant {
 
     &--select {
-        background-color: variables.$color_text;
+        background-color: abstracts.$color_text;
         border-radius: 1em; 
         @extend %boxShadow;
     }
@@ -44,5 +34,3 @@
     }
     
 }
-
-

@@ -68,20 +68,6 @@ input {
   background-image: linear-gradient(360deg, #9356DC 35%, #FF79DA 100%);
 }
 
-.restaurant--select {
-  background-color: white;
-  border-radius: 1em;
-}
-.restaurant img {
-  object-fit: cover;
-  height: calc(100% - 5rem);
-  width: 100%;
-  aspect-ratio: 1/0.5;
-  border-radius: 1em 1em 0 0;
-}
-.restaurant .far {
-  position: relative;
-}
 header {
   text-align: center;
   padding: 2rem;
@@ -224,6 +210,7 @@ header {
 }
 
 .restaurant--select {
+  position: relative;
   background-color: white;
   border-radius: 1em;
 }
@@ -234,8 +221,16 @@ header {
   aspect-ratio: 1/0.5;
   border-radius: 1em 1em 0 0;
 }
+.restaurant h3 {
+  padding: 1em 0 0.5em 0.5em;
+}
+.restaurant p {
+  padding: 0 0 1.5em 0.5em;
+}
 .restaurant .far {
-  position: relative;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

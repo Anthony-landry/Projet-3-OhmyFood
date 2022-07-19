@@ -5,6 +5,7 @@
 .restaurant {
 
     &--select {
+        position: relative;
         background-color: abstracts.$color_text;
         border-radius: 1em; 
         @extend %boxShadow;
@@ -20,14 +21,26 @@
 
     }
 
+    & h3  {
+      padding: 1em 0 0.5em 0.5em;
+    }
+
+    & p {
+        padding: 0 0 1.5em 0.5em;
+    }
+
     & .far {
         
-        position: relative;
+        position: absolute;
+        bottom: 30px;
+        right: 10px;
+        
         
 
         &:hover {
 
-            @extend %linearGradiant;
+        @extend %linearGradiant;
+        
 
             
         }

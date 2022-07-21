@@ -56,12 +56,8 @@ background-color: abstracts.$background-clear;
     & li{
 
         margin: 1rem;
-        
-
+        }
     }
-
-    }
-    
 }
 
 /* Restaurant */
@@ -70,8 +66,8 @@ background-color: abstracts.$background-clear;
     
     @extend %title-1;
     background-color: abstracts.$background-clear;
-    margin: 2rem 0;
-    padding : 2rem;
+    margin: 2rem 0 0 0;
+    padding : 5rem 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
@@ -94,6 +90,4 @@ background-color: abstracts.$background-clear;
     &__title{
         grid-column: 2 span;
     }
-
-    
 }

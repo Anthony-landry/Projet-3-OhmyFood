@@ -51,20 +51,20 @@ input {
 }
 
 /* font familly */
-.map-location, .reservation, .reservation__title, .choice, .restaurant, .contact {
+.menu, .map-location, .reservation, .reservation__title, .choice, .restaurant, .contact {
   font-family: "Roboto", sans-serif, verdana;
 }
 
-.contact__title, header {
+.menu__Title, .contact__title, header {
   font-family: "Shrikhand", cursive;
 }
 
 /* contouring box */
-.restaurant--select, .reservation__btn, .choice__listBtn li, .restaurant--buttonCardNew {
+.restaurant--select, .reservation__btn, .command__btn, .choice__listBtn li, .menu__listBtn li, .restaurant--buttonCardNew {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
 }
 
-.reservation__btn {
+.reservation__btn, .command__btn {
   background-image: linear-gradient(360deg, #9356DC 35%, #FF79DA 100%);
 }
 
@@ -136,8 +136,8 @@ header {
 /* Restaurant */
 .restaurant {
   background-color: #f6f6f6;
-  margin: 2rem 0;
-  padding: 2rem;
+  margin: 2rem 0 0 0;
+  padding: 5rem 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
@@ -157,28 +157,77 @@ header {
   grid-column: 2 span;
 }
 
-.reservation__btn {
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  border-radius: 5rem 5rem 0 0;
+  position: relative;
+  top: -100px;
+}
+.menu h3 {
+  position: relative;
+  border: none;
+  font-weight: 300;
+  margin: 3rem 0 1rem 1rem;
+}
+.menu h3::before,
+.menu h3::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 30px;
+}
+.menu h3::before {
+  left: 0;
+  top: 0;
+  border-bottom: 3px solid #99e2d0;
+}
+.menu__listBtn {
+  display: flex;
+  margin: 2rem;
+  justify-content: space-around;
+}
+@media (max-width: 800px) {
+  .menu__listBtn {
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+  }
+}
+.menu li {
+  margin: 1rem;
+  background-color: white !important;
+}
+.menu__price {
+  font-weight: bold;
+}
+
+.reservation__btn, .command__btn {
   border-radius: 2rem;
   color: white;
   padding: 1em;
 }
-.reservation__btn:hover {
+.reservation__btn:hover, .command__btn:hover {
   opacity: 0.6;
   zoom: 1.02;
 }
 
-.choice__listBtn li {
+.choice__listBtn li, .menu__listBtn li {
   position: relative;
   padding: 1.5rem 2rem;
   background-color: #f6f6f6;
   border-radius: 1rem;
   font-weight: bold;
 }
-.choice__listBtn li .fas {
+.choice__listBtn li .fas, .menu__listBtn li .fas {
   padding-right: 1rem;
   color: #7e7e7e;
 }
-.choice__listBtn li::before {
+.choice__listBtn li::before, .menu__listBtn li::before {
   position: absolute;
   counter-increment: compteListe 1;
   content: counter(compteListe) " ";
@@ -192,10 +241,10 @@ header {
   justify-content: center;
   transform: translate(-50px, -7px);
 }
-.choice__listBtn li:hover {
+.choice__listBtn li:hover, .menu__listBtn li:hover {
   background-color: #f5edff;
 }
-.choice__listBtn li:hover .fas {
+.choice__listBtn li:hover .fas, .menu__listBtn li:hover .fas {
   color: #9356DC;
 }
 

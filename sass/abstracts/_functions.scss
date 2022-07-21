@@ -1,0 +1,13 @@
+@function get-middle($values...) {
+    $result: 0;
+    @each $value in $values {
+      $result: ($value / 2) + $result;
+    }
+    @return $result;
+}
+
+
+// function return middle div
+@function middle($value) {
+  @return $value / 2;
+}

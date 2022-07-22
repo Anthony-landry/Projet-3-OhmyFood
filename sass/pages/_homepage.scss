@@ -47,9 +47,7 @@ background-color: abstracts.$background-clear;
     
     @media (max-width: 800px) {
 
-        flex-direction: column;
-        margin: 0;
-        text-align: center;
+        @include abstracts.mediaWidth;
         
     }
 

@@ -51,16 +51,16 @@ input {
 }
 
 /* font familly */
-.menu, .map-location, .reservation, .reservation__title, .choice, .restaurant, .contact {
+.mainResto, .map-location, .reservation, .reservation__title, .choice, .restaurant, .contact {
   font-family: "Roboto", sans-serif, verdana;
 }
 
-.menu__Title, .contact__title, header {
+.mainResto__Title, .contact__title, header {
   font-family: "Shrikhand", cursive;
 }
 
 /* contouring box */
-.restaurant--select, .reservation__btn, .command__btn, .choice__listBtn li, .menu__listBtn li, .restaurant--buttonCardNew {
+.mainResto__menu, .restaurant--select, .reservation__btn, .command__btn, .choice__listBtn li, .menu__listBtn li, .restaurant--buttonCardNew {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
 }
 
@@ -162,47 +162,47 @@ img {
   object-fit: cover;
 }
 
-.menu {
+.mainResto {
   background-color: #f6f6f6;
   border-radius: 5rem 5rem 0 0;
   position: relative;
   top: -100px;
 }
-.menu h3 {
-  position: relative;
-  border: none;
-  font-weight: 300;
-  margin: 3rem 0 1rem 1rem;
+.mainResto__card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
 }
-.menu h3::before,
-.menu h3::after {
+.mainResto__card h3 {
+  font-weight: 300;
+  margin: 2rem 0 3rem 1rem;
+}
+.mainResto h3::before {
   content: "";
   position: absolute;
   width: 50px;
   height: 30px;
-}
-.menu h3::before {
-  left: 0;
-  top: 0;
   border-bottom: 3px solid #99e2d0;
 }
-.menu__listBtn {
-  display: flex;
-  margin: 2rem;
-  justify-content: space-around;
+.mainResto__select {
+  margin: 1rem;
 }
 @media (max-width: 800px) {
-  .menu__listBtn {
-    flex-direction: column;
-    margin: 0;
-    text-align: center;
+  .mainResto__select {
+    grid-column: 1/-1;
   }
 }
-.menu li {
-  margin: 1rem;
+.mainResto__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-radius: 1em;
+  margin: 2rem;
+  padding: 1.5em;
   background-color: white !important;
 }
-.menu__price {
+.mainResto__price {
+  display: flex;
   font-weight: bold;
 }
 

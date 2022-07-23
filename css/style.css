@@ -157,6 +157,15 @@ header {
   grid-column: 2 span;
 }
 
+header {
+  position: relative;
+}
+header .fas {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
 img {
   max-width: 100%;
   object-fit: cover;
@@ -164,9 +173,13 @@ img {
 
 .mainResto {
   background-color: #f6f6f6;
-  border-radius: 5rem 5rem 0 0;
+  border-radius: 2rem 2rem 0 0;
+  padding-bottom: 5rem;
   position: relative;
-  top: -100px;
+  margin-top: -3rem;
+}
+.mainResto__Title {
+  padding: 3rem 2rem;
 }
 .mainResto__card {
   display: grid;
@@ -190,6 +203,7 @@ img {
 @media (max-width: 800px) {
   .mainResto__select {
     grid-column: 1/-1;
+    margin: 0;
   }
 }
 .mainResto__menu {
@@ -197,23 +211,43 @@ img {
   justify-content: space-between;
   align-items: flex-end;
   border-radius: 1em;
-  margin: 2rem;
-  padding: 1.5em;
+  margin: 1rem;
+  padding: 1em;
   background-color: white !important;
+}
+.mainResto__description {
+  overflow: hidden;
+}
+.mainResto h4 {
+  padding-bottom: 0.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .mainResto__price {
   display: flex;
   font-weight: bold;
 }
+.mainResto p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.command {
+  display: grid;
+  justify-content: center;
+  margin-top: 2em;
+}
 
 .reservation__btn, .command__btn {
   border-radius: 2rem;
   color: white;
-  padding: 1em;
+  padding: 1em 3em;
 }
 .reservation__btn:hover, .command__btn:hover {
   opacity: 0.6;
-  zoom: 1.02;
+  transform: scale(1.1);
 }
 
 .choice__listBtn li, .menu__listBtn li {
@@ -262,6 +296,7 @@ img {
   position: relative;
   background-color: white;
   border-radius: 1em;
+  overflow: hidden;
 }
 .restaurant img {
   object-fit: cover;
@@ -272,6 +307,9 @@ img {
 }
 .restaurant h3, .restaurant p {
   margin: 0.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .restaurant .far {
   position: absolute;

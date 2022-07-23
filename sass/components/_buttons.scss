@@ -10,13 +10,13 @@
     @extend %linearGradiant; 
     border-radius: 2rem;
     color: abstracts.$color_text;
-    padding: 1em;
+    padding: 1em 3em;
     @extend %boxShadow;
 
         &:hover {
 
             opacity: 0.60;
-            zoom: 1.02;
+            transform: scale(1.10);
         }
     }  
 } 

@@ -9,6 +9,7 @@
         background-color: abstracts.$color_text;
         border-radius: 1em; 
         @extend %boxShadow;
+        overflow: hidden;
     }
 
     & img {
@@ -23,6 +24,7 @@
     h3, p {
 
         margin: 0.5em;
+        @include abstracts.ellipsis;
 
     }
 
@@ -31,13 +33,7 @@
         position: absolute;
         bottom: 30px;
         right: 10px;
-        
-        
 
-        &:hover {
-
-    
-        }
     }
 
     & .fas {

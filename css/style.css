@@ -199,6 +199,7 @@ img {
 }
 .mainResto__select {
   margin: 1rem;
+  overflow: hidden;
 }
 @media (max-width: 800px) {
   .mainResto__select {
@@ -207,13 +208,27 @@ img {
   }
 }
 .mainResto__menu {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   border-radius: 1em;
   margin: 1rem;
   padding: 1em;
-  background-color: white !important;
+  overflow: hidden;
+  background-color: white;
+}
+.mainResto__menu:hover {
+  cursor: pointer;
+}
+.mainResto__menu:hover .mainResto__checkout, .mainResto__menu:hover .mainResto__price {
+  transform: translateX(-5em);
+  transition: transform 1s;
+}
+.mainResto__menu:hover .fas {
+  color: white;
+  transform: rotate(360deg);
+  transition: transform 1000ms ease-in-out;
 }
 .mainResto__description {
   overflow: hidden;
@@ -232,6 +247,22 @@ img {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.mainResto__checkout {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  border-radius: 0 1em 1em 0;
+  background-color: #99e2d0;
+  height: 100%;
+  width: 5em;
+  right: -5em;
+  bottom: 0;
+}
+.mainResto .fas {
+  color: white;
+  transform: rotate(0deg);
+  transition: transform 500ms ease-in-out;
 }
 
 .command {

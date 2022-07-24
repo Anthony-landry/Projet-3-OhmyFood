@@ -50,6 +50,17 @@ input {
   color: inherit;
 }
 
+/* appear Menu Restaurant */
+@keyframes appearMEnu {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* font familly */
 .mainResto, .map-location, .reservation, .reservation__title, .choice, .restaurant, .contact {
   font-family: "Roboto", sans-serif, verdana;
@@ -217,6 +228,8 @@ img {
   padding: 1em;
   overflow: hidden;
   background-color: white;
+  animation: appearMEnu 5s;
+  animation-fill-mode: both;
 }
 .mainResto__menu:hover {
   cursor: pointer;

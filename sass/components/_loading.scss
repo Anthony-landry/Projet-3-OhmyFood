@@ -11,7 +11,7 @@
     width: 100%;
     @extend %linearGradiant;
     opacity: 0.55;
-    z-index: 1;
+    z-index: 10;
     font-size: xxx-large;
     animation: closedLoading 3s forwards;
     
@@ -23,9 +23,9 @@
 
     span {
 
-    animation: loading .7s infinite;
+    animation: jumpCase .7s infinite;
 
-    @for $i from 1 through 7 {
+    @for $i from 1 through 7 {     // loop case loading
         &:nth-child(#{$i+1}) {
         animation-delay: #{$i*.1}s;
 

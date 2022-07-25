@@ -1,6 +1,6 @@
 /* appear Menu Restaurant */
 
-@keyframes appearMEnu {
+@keyframes appearMenu {
     0% {
         opacity: 0;
         transform: translateY(100%);
@@ -12,6 +12,8 @@
     }
 }
 
+/* loading */ 
+
 @keyframes closedLoading {
     0% {
     opacity: 1;
@@ -20,12 +22,13 @@
     100% {
 
     opacity: 0;
-    z-index: 0;
+    z-index: -1;
+    display: none;
     }
 }
 
 
-@keyframes loading {
+@keyframes jumpCase {
     0%, 100% {
     transform: translateY(0);
     }

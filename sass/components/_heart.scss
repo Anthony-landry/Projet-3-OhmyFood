@@ -3,27 +3,32 @@
 /* heart empty far */
 
 .emptyHeart { 
-        
+
     position: absolute;
     opacity: 1;     // visible
-                
+
         &:hover {
 
              opacity: 0; // no visible
                 }
             }
-        
+
 /* heart full fas */
-        
+
 .fullHeart  {
         
     position: absolute; 
-    color: red;
-    opacity: 0;   // no visible
+    @extend %linearGradiantHeart;
+    background-clip: text;          // property background-image
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0;                    // no visible
+    transition: all 1s ease-out;   // not hover
 
         &:hover {
 
-        opacity: 0.33 ; // visible
+        opacity: 1 ; // visible
+        transform: scale(1.06);
                 }
             }
 

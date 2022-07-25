@@ -51,7 +51,7 @@ input {
 }
 
 /* appear Menu Restaurant */
-@keyframes appearMEnu {
+@keyframes appearMenu {
   0% {
     opacity: 0;
     transform: translateY(100%);
@@ -61,16 +61,18 @@ input {
     transform: translateY(0);
   }
 }
+/* loading */
 @keyframes closedLoading {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    z-index: 0;
+    z-index: -1;
+    display: none;
   }
 }
-@keyframes loading {
+@keyframes jumpCase {
   0%, 100% {
     transform: translateY(0);
   }
@@ -92,8 +94,16 @@ input {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
 }
 
+.reservation__btn:hover, .command__btn:hover {
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.85);
+}
+
 .loading, .reservation__btn, .command__btn {
   background-image: linear-gradient(360deg, #9356DC 35%, #FF79DA 100%);
+}
+
+.fullHeart {
+  background-image: linear-gradient(40deg, rgb(255, 121, 218) 6%, rgb(147, 86, 220) 50%);
 }
 
 header {
@@ -196,6 +206,7 @@ header .fas {
 
 img {
   max-width: 100%;
+  aspect-ratio: 1/0.5;
   object-fit: cover;
 }
 
@@ -256,8 +267,20 @@ img {
   padding: 1em;
   overflow: hidden;
   background-color: white;
-  animation: appearMEnu 5s;
+  animation: appearMenu 5s;
   animation-fill-mode: both;
+}
+.mainResto__menu:nth-child(1) {
+  animation-delay: 0s;
+}
+.mainResto__menu:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.mainResto__menu:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.mainResto__menu:nth-child(4) {
+  animation-delay: 1.2s;
 }
 .mainResto__menu:hover {
   cursor: pointer;
@@ -408,11 +431,15 @@ img {
 /* heart full fas */
 .fullHeart {
   position: absolute;
-  color: red;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   opacity: 0;
+  transition: all 1s ease-out;
 }
 .fullHeart:hover {
-  opacity: 0.33;
+  opacity: 1;
+  transform: scale(1.06);
 }
 
 .loading {
@@ -423,7 +450,7 @@ img {
   height: 100%;
   width: 100%;
   opacity: 0.55;
-  z-index: 1;
+  z-index: 10;
   font-size: xxx-large;
   animation: closedLoading 3s forwards;
 }
@@ -433,7 +460,7 @@ img {
   color: #99E2D0;
 }
 .loading span {
-  animation: loading 0.7s infinite;
+  animation: jumpCase 0.7s infinite;
 }
 .loading span:nth-child(2) {
   animation-delay: 0.1s;

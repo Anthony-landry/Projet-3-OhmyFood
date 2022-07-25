@@ -16,6 +16,12 @@
     box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
 }
 
+
+%boxShadowDark {
+
+    box-shadow: 0 0 0.8rem rgb(0 0 0 / 85%);
+}
+
 %linearGradiant {
 
 background-image: linear-gradient(360deg, (variables.$color-primary) 35%, (variables.$color-secondary) 100%);
@@ -26,6 +32,6 @@ background-image: linear-gradient(360deg, (variables.$color-primary) 35%, (varia
 %linearGradiantHeart {
 
 
-background: linear-gradient(11deg, rgba(255,121,218,1) 6%, rgba(147,86,220,1) 50%);
+background-image: linear-gradient(40deg, rgba(255,121,218,1) 6%, rgba(147,86,220,1) 50%);
 
 }

@@ -1,0 +1,35 @@
+@use "../abstracts";
+@use "../abstracts/placeholders";
+
+
+.loading {
+
+    @extend %title-2;
+    position: fixed;
+    @include abstracts.flexMid;
+    height: 100%;
+    width: 100%;
+    @extend %linearGradiant;
+    opacity: 0.55;
+    z-index: 1;
+    font-size: xxx-large;
+    animation: closedLoading 3s forwards;
+    
+    span {
+        display: inline-block;
+        margin: 0.5em;
+        color: abstracts.$color-tertiary;
+        }
+
+    span {
+
+    animation: loading .7s infinite;
+
+    @for $i from 1 through 7 {
+        &:nth-child(#{$i+1}) {
+        animation-delay: #{$i*.1}s;
+
+            }
+        }
+    }
+}

@@ -61,12 +61,29 @@ input {
     transform: translateY(0);
   }
 }
+@keyframes closedLoading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+@keyframes loading {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2rem);
+  }
+}
 /* font familly */
 .mainResto, .map-location, .reservation, .reservation__title, .choice, .restaurant, .contact {
   font-family: "Roboto", sans-serif, verdana;
 }
 
-.mainResto__Title, .contact__title, header {
+.loading, .mainResto__Title, .contact__title, header {
   font-family: "Shrikhand", cursive;
 }
 
@@ -75,7 +92,7 @@ input {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
 }
 
-.reservation__btn, .command__btn {
+.loading, .reservation__btn, .command__btn {
   background-image: linear-gradient(360deg, #9356DC 35%, #FF79DA 100%);
 }
 
@@ -183,14 +200,25 @@ img {
 }
 
 .mainResto {
+  position: relative;
   background-color: #f6f6f6;
   border-radius: 2rem 2rem 0 0;
   padding-bottom: 5rem;
   position: relative;
   margin-top: -3rem;
+  /* heart empty */
+  /* heart full */
 }
 .mainResto__Title {
   padding: 3rem 2rem;
+}
+.mainResto .emptyHeart {
+  top: 3.5vh;
+  right: 5vw;
+}
+.mainResto .fullHeart {
+  top: 3.5vh;
+  right: 5vw;
 }
 .mainResto__card {
   display: grid;
@@ -206,7 +234,7 @@ img {
   position: absolute;
   width: 50px;
   height: 30px;
-  border-bottom: 3px solid #99e2d0;
+  border-bottom: 3px solid #99E2D0;
 }
 .mainResto__select {
   margin: 1rem;
@@ -238,7 +266,7 @@ img {
   transform: translateX(-5em);
   transition: transform 1s;
 }
-.mainResto__menu:hover .fas {
+.mainResto__menu:hover .fa-check-circle {
   color: white;
   transform: rotate(360deg);
   transition: transform 1000ms ease-in-out;
@@ -266,13 +294,13 @@ img {
   place-items: center;
   position: absolute;
   border-radius: 0 1em 1em 0;
-  background-color: #99e2d0;
+  background-color: #99E2D0;
   height: 100%;
   width: 5em;
   right: -5em;
   bottom: 0;
 }
-.mainResto .fas {
+.mainResto__checkout .fa-check-circle {
   color: white;
   transform: rotate(0deg);
   transition: transform 500ms ease-in-out;
@@ -327,7 +355,7 @@ img {
 }
 
 .restaurant--buttonCardNew {
-  background-color: #99e2d0;
+  background-color: #99E2D0;
   color: #008766;
   border-radius: 0.1em;
   padding: 0.6em 0.8em;
@@ -336,6 +364,10 @@ img {
   right: 10px;
 }
 
+.restaurant {
+  /* heart empty */
+  /* heart full */
+}
 .restaurant--select {
   position: relative;
   background-color: white;
@@ -355,19 +387,74 @@ img {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.restaurant .far {
-  position: absolute;
+.restaurant .emptyHeart {
   bottom: 30px;
   right: 10px;
 }
-.restaurant .fas {
-  position: absolute;
-  opacity: 0;
+.restaurant .fullHeart {
   bottom: 30px;
   right: 10px;
 }
-.restaurant .fas:hover {
+
+/* heart empty far */
+.emptyHeart {
+  position: absolute;
   opacity: 1;
+}
+.emptyHeart:hover {
+  opacity: 0;
+}
+
+/* heart full fas */
+.fullHeart {
+  position: absolute;
+  color: red;
+  opacity: 0;
+}
+.fullHeart:hover {
+  opacity: 0.33;
+}
+
+.loading {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0.55;
+  z-index: 1;
+  font-size: xxx-large;
+  animation: closedLoading 3s forwards;
+}
+.loading span {
+  display: inline-block;
+  margin: 0.5em;
+  color: #99E2D0;
+}
+.loading span {
+  animation: loading 0.7s infinite;
+}
+.loading span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.loading span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.loading span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.loading span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.loading span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.loading span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.loading span:nth-child(8) {
+  animation-delay: 0.7s;
 }
 
 /*# sourceMappingURL=style.css.map */

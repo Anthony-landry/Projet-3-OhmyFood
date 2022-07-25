@@ -78,7 +78,7 @@
 
     &--buttonCardNew {
 
-        background-color: abstracts.$background-card;
+        background-color: abstracts.$color-tertiary;
         color: abstracts.$color-card-text;
         @extend %boxShadow;
         border-radius: 0.1em;

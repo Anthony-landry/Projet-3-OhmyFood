@@ -4,7 +4,7 @@
 header {
     position :relative;
 
-    .fas {
+    .fas { // font awesome arrow 
     position :absolute;
     top: 30%;
     left: 5%;
@@ -20,6 +20,7 @@ img {
 .mainResto {
 
     @extend %title-1;
+    position : relative;
     background-color: abstracts.$background-clear;
     border-radius: 2rem 2rem 0 0 ;
     padding-bottom: 5rem;
@@ -30,6 +31,22 @@ img {
         
         @extend %title-2;
         padding : 3rem 2rem;
+    }
+
+    /* heart empty */
+
+    & .emptyHeart {
+
+        top: 3.5vh;
+        right: 5vw;
+    }
+
+    /* heart full */
+
+    & .fullHeart {
+
+        top: 3.5vh;
+        right: 5vw;
     }
 
     &__card {
@@ -45,15 +62,13 @@ img {
         }
     }
 
-
-
-    h3::before {
+    h3::before {  //green bar
 
     content: "";
     position: absolute;
     width: 50px;
     height: 30px;
-    border-bottom: 3px solid abstracts.$background-card;
+    border-bottom: 3px solid abstracts.$color-tertiary;
     }
     
 
@@ -63,6 +78,7 @@ img {
         overflow: hidden;
 
         @media (max-width: 800px) {
+
             grid-column: 1/-1;
             margin:0;
 
@@ -71,6 +87,7 @@ img {
         }
 
         &__menu {
+
             position: relative;
             display: flex;
             justify-content: space-between;
@@ -88,68 +105,65 @@ img {
 
                 cursor: pointer;
 
-                .mainResto__checkout , .mainResto__price  {
+            .mainResto__checkout , .mainResto__price  {   // & ne fonctionne pas ?
 
                 transform: translateX(-5em);
                 transition: transform 1s;
             }
 
-            .fas{
+            .fa-check-circle{
 
                 color:white;
                 transform: rotate(360deg);
                 transition: transform 1000ms ease-in-out;
+                }
             }
-
-            
-                
-            }
-
         }
 
         &__description {
+
             overflow: hidden;
 
         }
 
         & h4 {
+
             padding-bottom: 0.5em;
             @include abstracts.ellipsis;
         }
 
         &__price{
+
                 display: flex;
                 font-weight: bold;
             }
 
         & p {
+
             @include abstracts.ellipsis;
         }
 
         &__checkout {
+
             display: grid;
             place-items: center;
             position: absolute;
             border-radius: 0 1em 1em 0;
-            background-color: abstracts.$background-card;
+            background-color: abstracts.$color-tertiary;
             height : 100%;
             width: 5em;
             right: -5em;
             bottom: 0;
             
-        }
-
-            .fas{
-
+            .fa-check-circle{
+        
                 color:white;
                 transform: rotate(0deg);
                 transition: transform 500ms ease-in-out;
             }
+        }
+    }
 
-}
-        
-        
-        
 .command {
 
     display: grid;

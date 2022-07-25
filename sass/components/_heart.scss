@@ -1,0 +1,29 @@
+@use "../abstracts";
+
+/* heart empty far */
+
+.emptyHeart { 
+        
+    position: absolute;
+    opacity: 1;     // visible
+                
+        &:hover {
+
+             opacity: 0; // no visible
+                }
+            }
+        
+/* heart full fas */
+        
+.fullHeart  {
+        
+    position: absolute; 
+    color: red;
+    opacity: 0;   // no visible
+
+        &:hover {
+
+        opacity: 0.33 ; // visible
+                }
+            }
+

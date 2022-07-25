@@ -1,0 +1,91 @@
+@use "../abstracts";
+
+/*  section map marker */
+
+.map-location {
+
+    @extend %title-1;
+    @include abstracts.flexMid();
+    gap: 1rem;
+    background-color: abstracts.$background-light;
+    padding: 1rem;
+}
+
+/* section reservation & button */
+
+.reservation {
+
+@extend %title-1;
+padding: 2rem 2rem 5rem;    
+text-align: center; 
+background-color: abstracts.$background-clear;
+
+    &__title {
+        @extend %title-1;
+    }
+
+    &__sub{
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+}
+
+/* choice */
+
+.choice {
+    
+    @extend %title-1;
+    margin: 1rem;
+
+    &__listBtn {
+        
+    display: flex;
+    margin: 2rem;
+    justify-content: space-around;
+    counter-reset: compteListe; //css add increment value
+    
+    @media (max-width: 800px) {
+
+        @include abstracts.mediaWidth;
+        
+    }
+
+    & li{
+
+        margin: 1rem;
+        }
+    }
+}
+
+/* Restaurant */
+
+.restaurant {
+    
+    @extend %title-1;
+    background-color: abstracts.$background-clear;
+    margin: 2rem 0 0 0;
+    padding : 5rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+
+    &--select{
+
+        position : relative;
+
+        @media (max-width: 800px) {
+        grid-column: 1/-1;
+    }
+}
+
+&--buttonCardNew{
+    
+    position: absolute;
+
+}
+
+    &__title{
+        grid-column: 2 span;
+    }
+}

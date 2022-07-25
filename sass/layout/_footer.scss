@@ -1,0 +1,29 @@
+/* footer */
+@use "../abstracts";
+
+
+.contact {
+
+    &__title {
+
+    @extend %title-2; 
+    padding : 1em 0.5em;
+    font-size: 130%; 
+    
+    }
+    
+    @extend %title-1;
+    background-color: abstracts.$background-footer;
+    color: abstracts.$color_text;
+    padding: 1rem;
+
+    &__link {
+
+        padding: 0.5rem;
+
+        & .fas {
+            padding-right: 0.5em;
+        }
+    }
+
+}

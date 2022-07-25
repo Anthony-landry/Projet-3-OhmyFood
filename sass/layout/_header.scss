@@ -1,0 +1,8 @@
+@use "../abstracts";
+
+header {
+    text-align: center;
+    @extend %title-2;
+    padding : 2rem;
+    position: relative;
+}

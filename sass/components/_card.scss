@@ -1,0 +1,48 @@
+@use "../abstracts";
+
+
+// Restaurant 
+
+.restaurant {
+
+    &--select {
+        position: relative;
+        background-color: abstracts.$color_text;
+        border-radius: 1em; 
+        @extend %boxShadow;
+        overflow: hidden;
+    }
+
+    & img {
+
+        object-fit: cover;
+        height: calc(100% - 5rem);
+        width: 100%;
+        aspect-ratio: 1/0.5;
+        border-radius: 1em 1em 0 0;
+    }
+
+    h3, p {
+
+        margin: 0.5em;
+        @include abstracts.ellipsis;
+
+    }
+
+    /* heart empty */
+
+    & .emptyHeart {
+
+        bottom: 30px;
+        right: 10px;
+    }
+
+    /* heart full */
+
+    & .fullHeart {
+
+        bottom: 30px;
+        right: 10px;
+    }
+    
+}

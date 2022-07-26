@@ -9,17 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git.admod.xyz/Anthony/Projet-3-OhmyFood.git"
+    "url": "https://github.com/Anthony-landry/Projet-3-OhmyFood.git"
   },
   "author": "Anthony.L",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.12",
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "sass": "^1.51.0"
-  },
-  "dependencies": {
-    "cssnano": "^5.1.8"
   }
 }

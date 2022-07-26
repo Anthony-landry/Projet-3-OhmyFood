@@ -1,10 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -14,7 +66,11 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   text-size-adjust: none;
 }
 
-footer, header, nav, section, main {
+footer,
+header,
+nav,
+section,
+main {
   display: block;
 }
 
@@ -22,15 +78,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -62,6 +123,14 @@ input {
   }
 }
 /* loading */
+@keyframes jumpCase {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2rem);
+  }
+}
 @keyframes closedLoading {
   0% {
     opacity: 1;
@@ -70,14 +139,6 @@ input {
     opacity: 0;
     z-index: -1;
     display: none;
-  }
-}
-@keyframes jumpCase {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(2rem);
   }
 }
 /* font familly */
@@ -90,16 +151,25 @@ input {
 }
 
 /* contouring box */
-.mainResto__menu, .restaurant--select, .reservation__btn, .command__btn, .choice__listBtn li, .menu__listBtn li, .restaurant--buttonCardNew {
+header {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
 }
 
-.reservation__btn:hover, .command__btn:hover {
+.mainResto__menu, .restaurant--buttonCardNew, .restaurant--select, .reservation__btn,
+.command__btn, .choice__listBtn li {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.reservation__btn:hover, .reservation__btn:focus, .reservation__btn:active,
+.command__btn:hover,
+.command__btn:focus,
+.command__btn:active {
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.85);
 }
 
-.loading, .reservation__btn, .command__btn {
-  background-image: linear-gradient(360deg, #9356DC 35%, #FF79DA 100%);
+.loading, .reservation__btn,
+.command__btn {
+  background-image: linear-gradient(360deg, #9356dc 35%, #ff79da 100%);
 }
 
 .fullHeart {
@@ -126,7 +196,7 @@ header {
   padding: 0.5rem;
 }
 .contact__link .fas {
-  padding-right: 0.5em;
+  padding-right: 1em;
 }
 
 /*  section map marker */
@@ -141,12 +211,12 @@ header {
 
 /* section reservation & button */
 .reservation {
-  padding: 2rem 2rem 5rem;
+  padding: 2rem 0 5rem;
   text-align: center;
   background-color: #f6f6f6;
 }
 .reservation__sub {
-  padding: 1em;
+  padding: 2em;
   margin-bottom: 1em;
 }
 
@@ -154,20 +224,15 @@ header {
 .choice {
   margin: 1rem;
 }
-.choice__listBtn {
-  display: flex;
-  margin: 2rem;
-  justify-content: space-around;
-  counter-reset: compteListe;
+.choice h2 {
+  margin-top: 3rem;
 }
 @media (max-width: 800px) {
-  .choice__listBtn {
-    flex-direction: column;
-    margin: 0;
-    text-align: center;
+  .choice h2 {
+    margin: 3rem 0 2rem;
   }
 }
-.choice__listBtn li {
+.choice li {
   margin: 1rem;
 }
 
@@ -200,8 +265,8 @@ header {
 }
 header .fas {
   position: absolute;
-  top: 30%;
   left: 5%;
+  transform: translateY(-5%);
 }
 
 img {
@@ -221,15 +286,16 @@ img {
   /* heart full */
 }
 .mainResto__Title {
-  padding: 3rem 2rem;
+  padding: 3rem 1rem;
+  margin-right: 1.6rem;
 }
 .mainResto .emptyHeart {
-  top: 3.5vh;
-  right: 5vw;
+  top: 40px;
+  right: 26px;
 }
 .mainResto .fullHeart {
-  top: 3.5vh;
-  right: 5vw;
+  top: 40px;
+  right: 26px;
 }
 .mainResto__card {
   display: grid;
@@ -245,7 +311,7 @@ img {
   position: absolute;
   width: 50px;
   height: 30px;
-  border-bottom: 3px solid #99E2D0;
+  border-bottom: 3px solid #99e2d0;
 }
 .mainResto__select {
   margin: 1rem;
@@ -267,8 +333,7 @@ img {
   padding: 1em;
   overflow: hidden;
   background-color: white;
-  animation: appearMenu 5s;
-  animation-fill-mode: both;
+  animation: appearMenu 5s both;
 }
 .mainResto__menu:nth-child(1) {
   animation-delay: 0s;
@@ -282,14 +347,27 @@ img {
 .mainResto__menu:nth-child(4) {
   animation-delay: 1.2s;
 }
-.mainResto__menu:hover {
+.mainResto__menu:nth-child(5) {
+  animation-delay: 1.6s;
+}
+.mainResto__menu:hover, .mainResto__menu:focus, .mainResto__menu:active {
   cursor: pointer;
 }
-.mainResto__menu:hover .mainResto__checkout, .mainResto__menu:hover .mainResto__price {
+.mainResto__menu:hover .mainResto__description > p,
+.mainResto__menu:hover h4, .mainResto__menu:focus .mainResto__description > p,
+.mainResto__menu:focus h4, .mainResto__menu:active .mainResto__description > p,
+.mainResto__menu:active h4 {
+  margin-right: 6em;
+  transition: all 1s ease-out;
+}
+.mainResto__menu:hover .mainResto__checkout,
+.mainResto__menu:hover .mainResto__price, .mainResto__menu:focus .mainResto__checkout,
+.mainResto__menu:focus .mainResto__price, .mainResto__menu:active .mainResto__checkout,
+.mainResto__menu:active .mainResto__price {
   transform: translateX(-5em);
   transition: transform 1s;
 }
-.mainResto__menu:hover .fa-check-circle {
+.mainResto__menu:hover .fa-check-circle, .mainResto__menu:focus .fa-check-circle, .mainResto__menu:active .fa-check-circle {
   color: white;
   transform: rotate(360deg);
   transition: transform 1000ms ease-in-out;
@@ -312,12 +390,17 @@ img {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+@media (max-width: 350px) {
+  .mainResto p {
+    font-size: 13px;
+  }
+}
 .mainResto__checkout {
   display: grid;
   place-items: center;
   position: absolute;
   border-radius: 0 1em 1em 0;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   height: 100%;
   width: 5em;
   right: -5em;
@@ -335,32 +418,48 @@ img {
   margin-top: 2em;
 }
 
-.reservation__btn, .command__btn {
+.reservation__btn,
+.command__btn {
   border-radius: 2rem;
   color: white;
-  padding: 1em 3em;
+  padding: 1em 2em;
 }
-.reservation__btn:hover, .command__btn:hover {
-  opacity: 0.6;
-  transform: scale(1.1);
+.reservation__btn:hover, .reservation__btn:focus, .reservation__btn:active,
+.command__btn:hover,
+.command__btn:focus,
+.command__btn:active {
+  opacity: 0.7;
 }
 
-.choice__listBtn li, .menu__listBtn li {
+.choice__listBtn {
+  display: flex;
+  margin: 2rem;
+  justify-content: space-around;
+  counter-reset: compteListe;
+}
+@media (max-width: 800px) {
+  .choice__listBtn {
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+  }
+}
+.choice__listBtn li {
   position: relative;
   padding: 1.5rem 2rem;
   background-color: #f6f6f6;
   border-radius: 1rem;
   font-weight: bold;
 }
-.choice__listBtn li .fas, .menu__listBtn li .fas {
+.choice__listBtn li .fas {
   padding-right: 1rem;
   color: #7e7e7e;
 }
-.choice__listBtn li::before, .menu__listBtn li::before {
+.choice__listBtn li::before {
   position: absolute;
   counter-increment: compteListe 1;
   content: counter(compteListe) " ";
-  background-color: #9356DC;
+  background-color: #9356dc;
   color: white;
   border-radius: 50em;
   height: 2em;
@@ -370,26 +469,16 @@ img {
   justify-content: center;
   transform: translate(-50px, -7px);
 }
-.choice__listBtn li:hover, .menu__listBtn li:hover {
+.choice__listBtn li:hover, .choice__listBtn li:focus, .choice__listBtn li:active {
   background-color: #f5edff;
 }
-.choice__listBtn li:hover .fas, .menu__listBtn li:hover .fas {
-  color: #9356DC;
-}
-
-.restaurant--buttonCardNew {
-  background-color: #99E2D0;
-  color: #008766;
-  border-radius: 0.1em;
-  padding: 0.6em 0.8em;
-  font-weight: bold;
-  top: 20px;
-  right: 10px;
+.choice__listBtn li:hover .fas, .choice__listBtn li:focus .fas, .choice__listBtn li:active .fas {
+  color: #9356dc;
 }
 
 .restaurant {
-  /* heart empty */
-  /* heart full */
+  /* position heart empty */
+  /* position heart full */
 }
 .restaurant--select {
   position: relative;
@@ -404,7 +493,8 @@ img {
   aspect-ratio: 1/0.5;
   border-radius: 1em 1em 0 0;
 }
-.restaurant h3, .restaurant p {
+.restaurant h3,
+.restaurant p {
   margin: 0.5em;
   overflow: hidden;
   white-space: nowrap;
@@ -419,12 +509,22 @@ img {
   right: 10px;
 }
 
+.restaurant--buttonCardNew {
+  background-color: #99e2d0;
+  color: #008766;
+  border-radius: 0.1em;
+  padding: 0.6em 0.8em;
+  font-weight: bold;
+  top: 20px;
+  right: 10px;
+}
+
 /* heart empty far */
 .emptyHeart {
   position: absolute;
   opacity: 1;
 }
-.emptyHeart:hover {
+.emptyHeart:hover, .emptyHeart:focus, .emptyHeart:active {
   opacity: 0;
 }
 
@@ -435,11 +535,11 @@ img {
   -webkit-background-clip: text;
   color: transparent;
   opacity: 0;
-  transition: all 1s ease-out;
 }
-.fullHeart:hover {
+.fullHeart:hover, .fullHeart:focus, .fullHeart:active {
   opacity: 1;
   transform: scale(1.06);
+  transition: all 1s ease-out;
 }
 
 .loading {
@@ -457,10 +557,11 @@ img {
 .loading span {
   display: inline-block;
   margin: 0.5em;
-  color: #99E2D0;
-}
-.loading span {
+  color: #99e2d0;
   animation: jumpCase 0.7s infinite;
+}
+.loading span:nth-child(1) {
+  animation-delay: 0s;
 }
 .loading span:nth-child(2) {
   animation-delay: 0.1s;
@@ -480,8 +581,15 @@ img {
 .loading span:nth-child(7) {
   animation-delay: 0.6s;
 }
-.loading span:nth-child(8) {
-  animation-delay: 0.7s;
+@media (max-width: 800px) {
+  .loading {
+    font-size: x-large;
+  }
+}
+@media (max-width: 300px) {
+  .loading {
+    font-size: medium;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

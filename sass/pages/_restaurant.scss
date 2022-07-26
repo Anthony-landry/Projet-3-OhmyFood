@@ -2,182 +2,170 @@
 @use "../abstracts/placeholders";
 
 header {
-    position :relative;
+	position: relative;
 
-    .fas { // font awesome arrow 
-    position :absolute;
-    top: 30%;
-    left: 5%;
-    }
+	.fas {
+		// font awesome arrow
+		position: absolute;
+		left: 5%;
+		transform: translateY(-5%);
+	}
 }
 
 img {
-    max-width: 100%;
-    aspect-ratio: 1/0.5;
-    object-fit: cover;
-
+	max-width: 100%;
+	aspect-ratio: 1/0.5;
+	object-fit: cover;
 }
 
 .mainResto {
+	@extend %title-1;
+	position: relative;
+	background-color: abstracts.$background-clear;
+	border-radius: 2rem 2rem 0 0;
+	padding-bottom: 5rem;
+	position: relative;
+	margin-top: -3rem;
 
-    @extend %title-1;
-    position : relative;
-    background-color: abstracts.$background-clear;
-    border-radius: 2rem 2rem 0 0 ;
-    padding-bottom: 5rem;
-    position: relative;
-    margin-top:-3rem;
+	&__Title {
+		@extend %title-2;
+		padding: 3rem 1rem;
+		margin-right: 1.6rem;
+	}
 
-    &__Title {
-        
-        @extend %title-2;
-        padding : 3rem 2rem;
-    }
+	/* heart empty */
 
-    /* heart empty */
+	& .emptyHeart {
+		top: 40px;
+		right: 26px;
+	}
 
-    & .emptyHeart {
+	/* heart full */
 
-        top: 3.5vh;
-        right: 5vw;
-    }
+	& .fullHeart {
+		top: 40px;
+		right: 26px;
+	}
 
-    /* heart full */
+	&__card {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 2rem;
 
-    & .fullHeart {
+		h3 {
+			font-weight: 300;
+			margin: 2rem 0 3rem 1rem;
+		}
+	}
 
-        top: 3.5vh;
-        right: 5vw;
-    }
+	h3::before {
+		//green bar
 
-    &__card {
+		content: "";
+		position: absolute;
+		width: 50px;
+		height: 30px;
+		border-bottom: 3px solid abstracts.$color-tertiary;
+	}
 
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 2rem;
+	&__select {
+		margin: 1rem;
+		overflow: hidden;
 
-        h3 {
+		@media (max-width: 800px) {
+			grid-column: 1/-1;
+			margin: 0;
+		}
+	}
 
-            font-weight: 300;
-            margin: 2rem 0 3rem 1rem;
-        }
-    }
+	&__menu {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		border-radius: 1em;
+		margin: 1rem;
+		padding: 1em;
+		overflow: hidden;
+		background-color: abstracts.$color_text;
+		@extend %boxShadow;
+		animation: appearMenu 5s both;
 
-    h3::before {  //green bar
+		@for $i from 0 through 4 {
+			// appear menu
+			&:nth-child(#{$i + 1}) {
+				animation-delay: #{$i * 0.4}s;
+			}
+		}
 
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 30px;
-    border-bottom: 3px solid abstracts.$color-tertiary;
-    }
-    
+		&:hover,
+		&:focus,
+		&:active {
+			cursor: pointer;
 
-    &__select {
-        
-        margin: 1rem;
-        overflow: hidden;
+			.mainResto__description > p,
+			h4 {
+				margin-right: 6em;
+				transition: all 1s ease-out;
+			}
 
-        @media (max-width: 800px) {
+			.mainResto__checkout,
+			.mainResto__price {
+				transform: translateX(-5em);
+				transition: transform 1s;
+			}
 
-            grid-column: 1/-1;
-            margin:0;
+			.fa-check-circle {
+				color: white;
+				transform: rotate(360deg);
+				transition: transform 1000ms ease-in-out;
+			}
+		}
+	}
 
-    }
+	&__description {
+		overflow: hidden;
+	}
 
-        }
+	h4 {
+		padding-bottom: 0.5em;
+		@include abstracts.ellipsis;
+	}
 
-        &__menu {
+	&__price {
+		display: flex;
+		font-weight: bold;
+	}
 
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-radius: 1em;
-            margin: 1rem;
-            padding: 1em ;
-            overflow: hidden;
-            background-color: abstracts.$color_text ;
-            @extend %boxShadow;
-            animation: appearMenu 5s;
-            animation-fill-mode: both;
+	p {
+		@include abstracts.ellipsis;
 
-            @for $i from 0 through 3 {     // loop case loading
-                &:nth-child(#{$i+1}) {
-                animation-delay: #{$i*0.4}s;
-        
-                    }
-                }
+		@media (max-width: 350px) {
+			font-size: 13px;
+		}
+	}
 
-            &:hover {
+	&__checkout {
+		display: grid;
+		place-items: center;
+		position: absolute;
+		border-radius: 0 1em 1em 0;
+		background-color: abstracts.$color-tertiary;
+		height: 100%;
+		width: 5em;
+		right: -5em;
+		bottom: 0;
 
-                cursor: pointer;
-
-            .mainResto__checkout , .mainResto__price  {   // & ne fonctionne pas ?
-
-                transform: translateX(-5em);
-                transition: transform 1s;
-            }
-
-            .fa-check-circle{
-
-                color:white;
-                transform: rotate(360deg);
-                transition: transform 1000ms ease-in-out;
-                }
-            }
-        }
-
-        &__description {
-
-            overflow: hidden;
-
-        }
-
-        & h4 {
-
-            padding-bottom: 0.5em;
-            @include abstracts.ellipsis;
-        }
-
-        &__price{
-
-                display: flex;
-                font-weight: bold;
-            }
-
-        & p {
-
-            @include abstracts.ellipsis;
-        }
-
-        &__checkout {
-
-            display: grid;
-            place-items: center;
-            position: absolute;
-            border-radius: 0 1em 1em 0;
-            background-color: abstracts.$color-tertiary;
-            height : 100%;
-            width: 5em;
-            right: -5em;
-            bottom: 0;
-            
-            .fa-check-circle{
-        
-                color:white;
-                transform: rotate(0deg);
-                transition: transform 500ms ease-in-out;
-            }
-        }
-    }
-
-.command {
-
-    display: grid;
-    justify-content: center;
-    margin-top : 2em;
+		.fa-check-circle {
+			color: white;
+			transform: rotate(0deg);
+			transition: transform 500ms ease-in-out;
+		}
+	}
 }
 
-
-
+.command {
+	display: grid;
+	justify-content: center;
+	margin-top: 2em;
+}

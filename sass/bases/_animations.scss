@@ -1,39 +1,38 @@
 /* appear Menu Restaurant */
 
 @keyframes appearMenu {
-    0% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
+	0% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
-/* loading */ 
-
-@keyframes closedLoading {
-    0% {
-    opacity: 1;
-    }
-
-    100% {
-
-    opacity: 0;
-    z-index: -1;
-    display: none;
-    }
-}
-
+/* loading */
 
 @keyframes jumpCase {
-    0%, 100% {
-    transform: translateY(0);
-    }
+	0%,
+	100% {
+		transform: translateY(0);
+	}
 
-    50% {
-    transform: translateY(2rem);
-    }
+	50% {
+		transform: translateY(2rem);
+	}
+}
+
+@keyframes closedLoading {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		z-index: -1;
+		display: none;
+	}
 }

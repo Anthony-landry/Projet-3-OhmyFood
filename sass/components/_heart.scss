@@ -2,33 +2,37 @@
 
 /* heart empty far */
 
-.emptyHeart { 
+.emptyHeart {
+	position: absolute;
+	// visible
+	opacity: 1;
 
-    position: absolute;
-    opacity: 1;     // visible
-
-        &:hover {
-
-             opacity: 0; // no visible
-                }
-            }
+	&:hover,
+	&:focus,
+	&:active {
+		// no visible
+		opacity: 0;
+	}
+}
 
 /* heart full fas */
 
-.fullHeart  {
-        
-    position: absolute; 
-    @extend %linearGradiantHeart;
-    background-clip: text;          // property background-image
-    -webkit-background-clip: text;
-    color: transparent;
-    opacity: 0;                    // no visible
-    transition: all 1s ease-out;   // not hover
+.fullHeart {
+	position: absolute;
+	@extend %linearGradiantHeart;
+	// property background-image
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	// no visible
+	opacity: 0;
 
-        &:hover {
-
-        opacity: 1 ; // visible
-        transform: scale(1.06);
-                }
-            }
-
+	&:hover,
+	&:focus,
+	&:active {
+		// visible
+		opacity: 1;
+		transform: scale(1.06);
+		transition: all 1s ease-out;
+	}
+}

@@ -1,9 +1,4 @@
-//import utils
-// @use "abstracts/variables";
-// @use "abstracts/mixins";
-// @use "abstracts/functions";
-// @use "abstracts/placeholders";
-
+// base
 @use "./bases/reset";
 @use "./bases/base";
 @use "./bases/animations";
@@ -16,10 +11,8 @@
 @use "./pages/restaurant";
 
 //components
-
 @use "./components/buttons";
 @use "./components/card";
+@use "./components/cardNew";
 @use "./components/heart";
 @use "./components/loading";
-
-

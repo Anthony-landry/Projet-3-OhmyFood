@@ -1,28 +1,20 @@
 @use "./variables";
 @use "./placeholders";
 
-
 @mixin flexMid() {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-@mixin mediaWidth () {
-
-    flex-direction: column;
-    margin: 0;
-    text-align: center;
+@mixin mediaWidth() {
+	flex-direction: column;
+	margin: 0;
+	text-align: center;
 }
 
 @mixin ellipsis() {
-    
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
-
-@mixin loop () {
-    
-    }

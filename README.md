@@ -1,4 +1,4 @@
-# Projet-3-OhmyFood
+# Projet 3 OhmyFood Openclassrooms
 
 
 Ohmyfood! est une entreprise de commande de repas en ligne.  
